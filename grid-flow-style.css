@@ -20,8 +20,7 @@ span {
 .grid-container {
   display: grid;
   grid-auto-flow: column;
-  width: 80vw;
-  height: 80vh;
+  width: 90vw;
 }
 
 .col-1 {
