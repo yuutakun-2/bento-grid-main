@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap");
 
 body {
-  background-color: #f2f2f2;
+  background-color: cyan;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -246,60 +246,72 @@ span {
   width: 50%;
 }
 
-@media (max-width: 768px) {
-  body {
-    flex-direction: column; /* Stack items vertically */
-  }
-
+@media (max-width: 480px) {
   .grid-container {
-    width: 100vw;
-    display: block; /* Make grid container stack */
+    display: grid;
+    grid-auto-flow: row;
   }
-
-  .col-1,
-  .col-2,
-  .col-2-1,
-  .col-2-2 {
-    width: 100%; /* Make columns fill the screen */
-    display: block; /* Stack items in one column */
+  .col-1 {
+    order: 2;
+    grid-row: 2;
+    display: block;
+    width: auto;
+    padding: 0px;
+  }
+  .col-2 {
+    order: 1;
+    grid-row: 1;
+    padding: 0px;
+    display: block;
+  }
+  .col-2-1 {
+    display: block;
   }
 
   .item1,
-  .item4,
   .item2,
   .item3,
+  .item4,
   .item5,
   .item6,
   .item7,
   .item8 {
-    max-width: 100%; /* Make sure each item fits the screen */
-    padding: 20px; /* Adjust padding for smaller screens */
-  }
-
-  .item1 img,
-  .item4 img,
-  .item5 img,
-  .item7 img,
-  .item8 img {
-    width: 100%; /* Make images scale down to fit the screen */
+    padding: 20px;
+    margin-top: 40px;
   }
 
   .item2 span {
-    font-size: 2rem; /* Adjust text size for mobile */
+    font-size: 2.5rem;
   }
-
-  .item6 {
-    padding: 40px; /* Reduce padding */
+  .item2 img,
+  .item3 img,
+  .item5 img,
+  .item6 img,
+  .item7 img,
+  .item8 img {
+    width: 100%;
   }
-
-  /* Modify the grid layout for the items */
-  .col-2-1 {
-    grid-template-columns: 1fr; /* Single column for smaller screens */
-    grid-template-rows: repeat(6, 1fr); /* Stack all items vertically */
+  .item1,
+  .item4 {
+    max-width: fit-content;
   }
 
   .col-2-2 {
-    grid-template-columns: 1fr; /* Single column */
-    grid-template-rows: repeat(3, 1fr);
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 0px;
+  }
+  .item8 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding-left: 60px;
+    padding-right: 60px;
+  }
+  .item7 {
+    margin-bottom: 40px;
+    margin-top: 0px;
   }
 }
